@@ -1,0 +1,213 @@
+:root {
+    --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --border-color: #e2e8f0;
+    --bg-header: #f8fafc;
+    
+    /* Шкала цветов качества воздуха (Обновленные HEX-коды) */
+    --color-bun: #00DDDD;
+    --color-acceptable: #50C878;
+    --color-moderat: #CFB53B;
+    --color-rau: #E34234;
+    --color-foarte-rau: #800000;
+    --color-extrem: #702C63;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 24px;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.page__header h1 {
+    font-size: 1.35rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.header-info-box {
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 32px;
+}
+
+.header-info-box p {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+/* Карточки параметров */
+.accordion__item {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.accordion__header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8fafc;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 12px;
+}
+
+.accordion__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* KPI-плашка с динамическим цветом */
+.kpi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    background: #e2e8f0;
+    color: #0f172a;
+    border: 1px solid rgba(0,0,0,0.08);
+    white-space: nowrap;
+}
+
+/* Классы динамической окраски плашек KPI по уровням */
+.kpi-badge.kpi-bun { background-color: var(--color-bun); color: #003333; }
+.kpi-badge.kpi-acc { background-color: var(--color-acceptable); color: #ffffff; }
+.kpi-badge.kpi-mod { background-color: var(--color-moderat); color: #2a2200; }
+.kpi-badge.kpi-rau { background-color: var(--color-rau); color: #ffffff; }
+.kpi-badge.kpi-frau { background-color: var(--color-foarte-rau); color: #ffffff; }
+.kpi-badge.kpi-ext { background-color: var(--color-extrem); color: #ffffff; }
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: currentColor;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+}
+
+.accordion__content {
+    padding: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 360px;
+    margin-bottom: 20px;
+}
+
+/* Оболочка таблицы для адаптивного скролла */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.quality-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    min-width: 600px; /* Чтобы таблица красиво прокручивалась на смартфонах */
+    font-size: 0.82rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.quality-table th {
+    font-weight: 600;
+    padding: 8px;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.quality-table td {
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    padding: 8px;
+    text-align: center;
+}
+
+.bun-cell, .bun-lvl { background-color: var(--color-bun); color: #003333; }
+.acceptable-cell, .acceptable-lvl { background-color: var(--color-acceptable); color: #fff; }
+.moderat-cell, .moderat-lvl { background-color: var(--color-moderat); color: #2a2200; }
+.rau-cell, .rau-lvl { background-color: var(--color-rau); color: #fff; }
+.foarte-rau-cell, .foarte-rau-lvl { background-color: var(--color-foarte-rau); color: #fff; }
+.extrem-de-rau-cell, .extrem-de-rau-lvl { background-color: var(--color-extrem); color: #fff; }
+
+.active-level {
+    box-shadow: inset 0 0 0 3px #0f172a;
+    font-weight: bold;
+}
+
+.page__footer {
+    margin-top: 32px;
+    font-size: 0.85rem;
+    color: #64748b;
+    text-align: center;
+}
+
+/* -------------------------------------------------------------
+   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ И ПЛАНШЕТОВ
+   ------------------------------------------------------------- */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    .page {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .page__header h1 {
+        font-size: 1.15rem;
+    }
+
+    .accordion__header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 16px;
+    }
+
+    .kpi-badge {
+        align-self: flex-start;
+        font-size: 0.85rem;
+        padding: 4px 10px;
+    }
+
+    .accordion__content {
+        padding: 12px;
+    }
+
+    .chart-container {
+        height: 280px; /* Уменьшаем высоту графика на мобильных */
+    }
+}

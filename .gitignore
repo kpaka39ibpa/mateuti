@@ -1,0 +1,5 @@
+main_min.js
+main_orig.js
+# Если не хотите пушить все CSV данные, раскомментируйте строки ниже:
+# data/*.csv
+# archive/*.csv

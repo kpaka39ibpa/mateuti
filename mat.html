@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mateuți — Calitatea aerului</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Highcharts core (подключается 1 раз) -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <!-- Модуль для розы ветров (полярные диаграммы) -->
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+</head>
+<body>
+<main class="page">
+    <header class="page__header">
+        <h1>Calitatea aerului atmosferic monitorizată la stația automată de tip fond rural din loc. Mateuți, r-nul Rezina</h1>
+        
+        <div class="header-info-box">
+            <p>În conformitate cu prevederile Directivei Europene 2008/50/CE privind calitatea aerului înconjurător și un aer mai curat pentru Europa, starea de calitate a aerului atmosferic este determinată de valoarea concentrațiilor poluanților monitorizați.</p>
+            <p>Starea calității aerului atmosferic, în dependență de concentrațiile înregistrate a poluanților, poate fi clasificată conform unei tipologii și vizualizată în baza unei scale de culori corespunzătoare.</p>
+        </div>
+    </header>
+
+    <section id="accordion" class="accordion" aria-label="Poluanți">
+        <!-- JS динамически создаст карточки и графики -->
+    </section>
+
+    <footer class="page__footer">
+        Sursă: Stația automată de tip fond rural Mateuți. Date din sistemul de monitorizare.
+    </footer>
+</main>
+
+<!-- Подключаем только рабочий main.js -->
+<script src="main.js" defer></script>
+</body>
+</html>
