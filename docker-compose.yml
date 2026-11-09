@@ -3,7 +3,7 @@ services:
     build: .
     container_name: mateuti_web
     ports:
-      - "8080:80"
+      - "8081:80"
     volumes:
       - ./data:/var/www/html/data
       - ./archive:/var/www/html/archive
